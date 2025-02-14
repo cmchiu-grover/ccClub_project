@@ -1,0 +1,398 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft JhengHei", Arial, sans-serif;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+body {
+  background-image: url("../indexbg.png");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+body header nav {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+body header nav ul {
+  display: flex;
+}
+body header nav ul li {
+  padding: 8px 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 156, 91, 0.5);
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+  text-decoration: none;
+  margin: 1rem;
+}
+body header nav ul li a {
+  font-size: 1.15rem;
+  transition: all 0.3s ease;
+  color: #666;
+  text-decoration: none;
+}
+body header nav ul li a:hover {
+  color: white;
+}
+body header nav ul li:hover {
+  background-color: rgba(255, 156, 91, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+body .cover {
+  padding-top: 4rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body .cover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3); /* 白色半透明遮罩 */
+  z-index: -1;
+}
+body main {
+  margin: 20px;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* 添加一個半透明遮罩層 */
+}
+body main div.container {
+  position: relative;
+  z-index: 2; /* 確保內容在遮罩層上方 */
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6); /* 更透明的背景 */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px); /* 毛玻璃效果 */
+}
+body main div.container h1,
+body main div.container h2 {
+  color: #444;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+body main div.container .user_welcome {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+body main div.container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main div.container form div.search-wrapper {
+  width: 100%;
+  max-width: 500px; /* 控制整體寬度 */
+  margin: 0 auto; /* 水平置中 */
+}
+body main div.container form div.search-wrapper div.search-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center; /* 水平置中 */
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px; /* 與標籤的間距 */
+}
+body main div.container form div.search-wrapper div.search-container input[type=text] {
+  padding: 12px 20px;
+  width: 100%; /* 讓輸入框填滿容器 */
+  max-width: 300px; /* 最大寬度限制 */
+  border: 2px solid rgba(255, 156, 91, 0.3);
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+body main div.container form div.search-wrapper div.search-container input[type=text]:focus {
+  border-color: rgba(255, 156, 91, 0.8);
+  box-shadow: 0 0 8px rgba(255, 156, 91, 0.2);
+}
+body main div.container form div.search-wrapper div.search-container button {
+  padding: 12px 25px;
+  background-color: rgba(255, 156, 91, 0.9);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(255, 156, 91, 0.3);
+  white-space: nowrap; /* 防止按鈕文字換行 */
+}
+body main div.container form div.search-wrapper div.search-container button:hover {
+  background-color: rgb(255, 127, 80);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 156, 91, 0.4);
+}
+body main div.container form div.search-wrapper div.popular-tags {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+body main div.container form div.search-wrapper div.popular-tags a.tag {
+  padding: 8px 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 156, 91, 0.5);
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+  text-decoration: none;
+}
+body main div.container form div.search-wrapper div.popular-tags a.tag:hover {
+  background-color: rgba(255, 156, 91, 0.9);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+body main div.container div.login_area {
+  font-size: 1rem;
+}
+body main div.container div.login_area form {
+  display: grid;
+  grid-template-columns: 10vw 20vw;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+}
+body main div.container div.login_area form .p1 {
+  grid-area: 1/1/2/2;
+}
+body main div.container div.login_area form .input1 {
+  grid-area: 1/2/2/3;
+}
+body main div.container div.login_area form .p2 {
+  grid-area: 2/1/3/2;
+}
+body main div.container div.login_area form .input2 {
+  grid-area: 2/2/3/3;
+}
+body main div.container div.login_area form .div5 {
+  grid-area: 3/1/4/3;
+}
+body main div.container div.register_area {
+  font-size: 1rem;
+}
+body main div.container div.register_area form {
+  display: grid;
+  grid-template-columns: 20vw 30vw;
+  grid-template-rows: repeat(9, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+}
+body main div.container div.register_area form .div1 {
+  grid-area: 1/1/2/2;
+}
+body main div.container div.register_area form .input1 {
+  grid-area: 1/2/2/3;
+}
+body main div.container div.register_area form .div2 {
+  grid-area: 2/1/3/2;
+}
+body main div.container div.register_area form .input2 {
+  grid-area: 2/2/3/3;
+}
+body main div.container div.register_area form .div3 {
+  grid-area: 3/1/4/2;
+}
+body main div.container div.register_area form .input3 {
+  grid-area: 3/2/4/3;
+}
+body main div.container div.register_area form .div4 {
+  grid-area: 4/1/5/2;
+}
+body main div.container div.register_area form .input4 {
+  grid-area: 4/2/5/3;
+}
+body main div.container div.register_area form .div5 {
+  grid-area: 5/1/6/2;
+}
+body main div.container div.register_area form .input5 {
+  grid-area: 5/2/6/3;
+}
+body main div.container div.register_area form .div6 {
+  grid-area: 6/1/7/2;
+}
+body main div.container div.register_area form .input6 {
+  grid-area: 6/2/7/3;
+}
+body main div.container div.register_area form .div7 {
+  grid-area: 7/1/8/2;
+}
+body main div.container div.register_area form .input7 {
+  grid-area: 7/2/8/3;
+}
+body main div.container div.register_area form .div8 {
+  grid-area: 8/1/9/2;
+}
+body main div.container div.register_area form .input8 {
+  grid-area: 8/2/9/3;
+}
+body main div.container div.register_area form .div9 {
+  grid-area: 9/1/10/2;
+}
+body main div.container div.register_area form .input9 {
+  grid-area: 9/2/10/3;
+}
+body main div.container div.register_area form .regis_agree {
+  grid-area: 10/1/11/3;
+  display: flex;
+  justify-content: center;
+}
+body main div.container div.register_area form .regis_agree p,
+body main div.container div.register_area form .regis_agree input {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+body main div.container div.register_area form .regis_submit {
+  grid-area: 11/1/12/3;
+}
+body main section.result_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
+  z-index: 2; /* 確保內容在遮罩層上方 */
+}
+body main section.result_main h1 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+body main section.result_main section.result {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+}
+body main section.result_main section.result div.result {
+  width: 33%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+body main section.result_main section.result div.result h2 {
+  text-align: center;
+}
+body main section.result_main section.result div.result div.result_area {
+  width: 100%;
+  height: 30vw;
+  overflow: auto;
+}
+body main section.result_main section.result div.result div.result_area article {
+  border: red;
+}
+body main section.result_main section.result div.result div.result_area ul {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border: red;
+}
+body main section.result_main section.result div.result div.result_area ul li {
+  list-style-type: none;
+}
+body main section.result_main section.result div.result div.result_area ul h3 {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+body main div.dashboard {
+  display: flex;
+}
+body main div.dashboard div.dashboard_chart {
+  margin: 1rem;
+  justify-items: center;
+  text-align: center;
+}
+body main div.dashboard div.dashboard_chart h2 {
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+body main div.welcome {
+  text-align: center;
+}
+body main div.welcome h2 {
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+body section.map {
+  padding: 2rem;
+}
+body section.map .map-image {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4rem 0 0 0;
+}
+body section.map .map-image iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+body footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  flex-grow: 1;
+}
+body footer .footer-cover {
+  display: flex;
+  position: relative;
+  padding: 0 1rem;
+}
+body footer .footer-cover::before {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* 白色半透明遮罩 */
+  z-index: -1;
+}
+body footer section.links a {
+  text-decoration: none;
+  color: rgb(54, 57, 106);
+  font-size: 20px;
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+<div class="welcome">
+  <h2>親愛的 {{user}}，此頁面為 dashboard。</h2>
+</div>
+<div class="dashboard">
+  <div class="dashboard_chart">
+    <h2>關鍵字搜尋次數</h2>
+  </div>
+  <div class="dashboard_chart">
+    <h2>文章來源篇數</h2>
+  </div>
+</div>
+{% endblock content %}
+
+<!-- Google Map -->
+{% block map %} {% endblock map %}

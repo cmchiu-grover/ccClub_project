@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content %}
+<section class="result_main">
+  <h1>您輸入的關鍵字：{{keyword}}</h1>
+  <h1>搜尋結果</h1>
+  <section class="result">
+    <div class="result">
+      <h2>PTT</h2>
+      <div class="result_area">
+        <ul>
+          {% for res in articles %}
+          <li>標題:{{res.title}}</li>
+          <li>簡介:{{res.introduction}}</li>
+          <li>作者:{{res.author}}</li>
+          <li>連結:<a href="{{res.link}}" target="_blank">點我查看</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+</section>
+{% endblock content %}

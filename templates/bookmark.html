@@ -1,0 +1,6 @@
+{% extends "base.html" %} {% block title %} 首頁 ｜Login Exp {% endblock %}
+{%block content %} {% if current_user.is_authenticated %}
+<h3>Hello {{current_user.username}}，以下是您的書籤：</h3>
+{% else %}
+<h3>請登入後再使用此功能。</h3>
+{% endif %} {% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h1>Travel Blog Search</h1>
+  {% if request.session.get("user") %}
+  <div class="user_welcome">親愛的 {{user}}，歡迎使用搜尋：</div>
+  {% endif %}
+  <form method="POST" action="{{ url_for('index') }}">
+    <div class="search-wrapper">
+      <div class="search-container">
+        <input
+          type="text"
+          name="keyword"
+          placeholder="Enter keyword to search..."
+          id="search-input"
+          required
+        />
+        <button type="submit">Search</button>
+      </div>
+      <div>
+        <label for="agree"
+          >Please agree to the rules before proceeding with the search.</label
+        >
+        <input type="checkbox" id="agree" />
+      </div>
+      <div class="popular-tags">
+        {% if keyword_tags %} {% for keyword_tag in keyword_tags %}
+        <a
+          href="{{ url_for('tag_search', tag=keyword_tag.keyword) }}"
+          class="tag"
+          >{{keyword_tag.keyword}}</a
+        >
+        {% endfor %} {% endif %}
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock content %}

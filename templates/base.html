@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Blog Search</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='/css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">HOME</a></li>
+          <li><a href="">BOOKMARK</a></li>
+          <li><a href="#">LINK</a></li>
+
+          {% if request.session.get("user") %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard">DASHBOARD</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">LOGOUT</a>
+          </li>
+
+          {% else %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="/login">LOGIN</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/register">REGISTER</a>
+          </li>
+
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- 其他內容出現的地方 由此開始 -->
+      {% block content %} {% endblock content %}
+      <!-- 其他內容出現的地方 到此結束 -->
+    </main>
+    <footer>
+      <div class="footer-cover">
+        <section class="logo">
+          <!-- <img src="" alt="logo" /> -->
+          <h3>Travel Blog Search</h3>
+        </section>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', path='/js/app.js') }}"></script>
+  </body>
+</html>

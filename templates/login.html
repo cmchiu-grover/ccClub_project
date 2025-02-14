@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <div class="page-header">
+    <h2>Login Your Account</h2>
+  </div>
+  <div class="login_area">
+    <form method="post" action="/login">
+      <p class="p1">帳號：</p>
+      <input
+        class="input1"
+        type="text"
+        name="username"
+        value="{{ username or '' }}"
+        placeholder="帳號"
+        required
+      />
+      <p class="p2">密碼：</p>
+      <input
+        class="input2"
+        type="password"
+        name="password"
+        value="{{ password or '' }}"
+        placeholder="密碼"
+        required
+      />
+      <div class="div5">
+        <button type="submit">登入</button>
+        {{error}}
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

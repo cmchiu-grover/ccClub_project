@@ -1,0 +1,105 @@
+{% extends "base.html" %} {% block title %}Register Page{% endblock %} {% block
+content %}
+<div class="container">
+  <div class="page-header">
+    <h2>Register Your Account</h2>
+  </div>
+  <div class="register_area">
+    <form method="post" action="/register" autocomplete="off">
+      <p class="p1">使用者名稱：</p>
+      <input
+        class="input1"
+        type="text"
+        name="username"
+        value="{{ username or '' }}"
+        required
+      />
+
+      <p class="p2">電子郵件：</p>
+      <input
+        class="input2"
+        type="email"
+        name="email"
+        value="{{ email or '' }}"
+        required
+      />
+
+      <p class="p3">密碼：</p>
+      <input
+        class="input3"
+        type="password"
+        name="password"
+        value="{{ password or '' }}"
+        pattern="[a-zA-Z0-9]{8,}"
+        autocomplete="new-password"
+        required
+      />
+
+      <p class="p4">再次輸入密碼：</p>
+      <input
+        class="input4"
+        type="password"
+        name="password_checked"
+        pattern="[a-zA-Z0-9]{8,}"
+        autocomplete="new-password"
+        required
+      />
+
+      <p class="p5">性別：</p>
+      <select class="input5" name="gender">
+        <option value="none"></option>
+        <option value="female">生理女</option>
+        <option value="male">生理男</option>
+      </select>
+
+      <p class="p6">年齡：</p>
+      <input
+        class="input6"
+        type="number"
+        name="age"
+        min="0"
+        max="110"
+        value="{{ age or 0 }}"
+      />
+
+      <p class="7">居住國家：</p>
+      <input
+        class="input7"
+        type="text"
+        name="country"
+        value="{{ country or '' }}"
+      />
+
+      <p class="p8">居住城市：</p>
+      <input
+        class="input8"
+        type="text"
+        name="loaction"
+        value="{{ loaction or '' }}"
+      />
+
+      <p class="p9">教育程度：</p>
+      <select class="input9" name="education">
+        <option value="none"></option>
+        <option value="Preschool">國小以下</option>
+        <option value="Middle">國中</option>
+        <option value="High">高中</option>
+        <option value="College">大學</option>
+        <option value="Grad">研究所以上</option>
+      </select>
+
+      <div class="regis_agree">
+        <p>是否同意註冊條款？</p>
+        <br />
+        <input type="checkbox" name="agree_register" />
+      </div>
+      <div class="regis_submit">
+        <button type="submit">註冊</button>
+      </div>
+    </form>
+    {% if error %}
+    <p style="color: red">{{ error }}</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
